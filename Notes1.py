@@ -38,6 +38,7 @@ d1 = Date('09', '06', '2023', 'Today') # Object of type 'Date'
 d2 = Date('09', '07', '2023', 'Tomorrow')
 
 print(d1) # How does this use __str__ method? why not getDate?
+d1.getDate()
 
 # -------------------------------------
 
