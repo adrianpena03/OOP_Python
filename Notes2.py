@@ -31,3 +31,18 @@ print(t1)
 print(t2)
 
 
+def solution(a, signs, b, c):
+    output = []
+    for i in range(len(a)):
+        if signs[i] == '+':
+            if a[i] + b[i] == c[i]:
+                output.append(True)
+            else:
+                output.append(False)
+        elif signs[i] == '-':
+            if a[i] - b[i] == c[i]:
+                output.append(True)
+            else:
+                output.append(False)
+    return output
+        
