@@ -2,8 +2,8 @@ class Baggage:
     allowed_items = ("pen", "book", "coat")
     def __init__(self, name, capacity=5):
         """This code manages items in an inventory of class Baggage, 
-        such as displaying, adding, removing, and checking if items are in the inventory
-        
+        such as displaying, adding, removing, and checking items.
+
         Created by Adrian Pena. """
         self.name = name
         self.capacity = capacity
@@ -40,7 +40,7 @@ class InvItem:
         self.item_name = item_name
 
 
-# Global Executable code follows......................................
+# Global Executable code follows.....................................
         
 input('Hit "Enter" to create "backpack1" object with name "My backpack1": \n')
 backpack = Baggage('My backpack1')
