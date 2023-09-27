@@ -45,4 +45,4 @@ def solution(a, signs, b, c):
             else:
                 output.append(False)
     return output
-        
+    

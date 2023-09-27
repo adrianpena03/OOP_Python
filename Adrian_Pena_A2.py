@@ -2,6 +2,11 @@ class Student:
     totalEnrollment = 0
     g_num_counter = 0
 
+# This code manages student information by calculating gpa, adding grades, student enrollment, 
+# class level, and comparing student objects.
+
+# Created by Adrian Pena
+
     def __init__(self, name, major='IST', enrolled='y', credit=0, qpoints=0):
         self.name = name
         self.major = major
@@ -14,6 +19,7 @@ class Student:
         Student.g_num_counter += 1
 
     def __str__(self):
+        # Returns attributes as a string
         return (
             "Name: " + str(self.name) +
             ", Major: " + self.major +
@@ -23,11 +29,13 @@ class Student:
         )
 
     def gpa(self):
+        # Calculates the GPA by dividing quality points over credits
         if self.credit == 0:
             return 0.0
         return self.qpoints / self.credit
 
     def addGrade(self, grade, credits):
+        # Adds grade to dictionary depending on credits and q points
         grade_values = {"A": 4, "B": 3, "C": 2, "D": 1, "F": 0}
         if grade in grade_values and 0 <= credits <= 4:
             qpoints = grade_values[grade] * credits
@@ -39,12 +47,14 @@ class Student:
             return False
 
     def isActive(self):
+        # Determines whether a student is enrolled or not
         if self.enrolled.lower() == "y":
             return True
         elif self.enrolled.lower() == "n":
             return False
 
     def classLevel(self):
+        # Determines student class level based on # of credits completed
         if self.credit >= 90:
             return 'Senior'
         elif self.credit >= 60:
@@ -54,7 +64,8 @@ class Student:
         else:
             return 'Freshman'
 
-    def eqStudent(self, other_student):
+    def eqStu(self, other_student):
+        # compares student object to gnum to see if they are the same
         if self.g_num == other_student.g_num and self.name == other_student.name:
             return True
         else:
