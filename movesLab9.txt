@@ -1,0 +1,35 @@
+1939,Gone With the Wind,drama
+1943,Casablanca,drama
+1954,On the Waterfront,drama
+1957,The Bridge on the River Kwai,historical
+1961,West Side Story,musical
+1965,The Sound of Music,musical
+1969,Midnight Cowboy,drama
+1972,The Godfather,drama
+1973,The Sting,comedy
+1977,Annie Hall,comedy
+1981,Chariots of Fire,drama
+1982,Gandhi,historical
+1984,Amadeus,historical
+1986,Platoon,action
+1988,Rain Man,drama
+1990,Dances with Wolves,western
+1991,The Silence of the Lambs,drama
+1992,Unforgiven,western
+1993,Schindler s List,historical
+1994,Forrest Gump,comedy
+1995,Braveheart,historical
+1998,Shakespeare in Love,comedy
+2001,A Beautiful Mind,historical
+2002,Chicago,musical
+2009,The Hurt Locker,action
+2012,Argo,historical
+2013,12 Years a Slave,drama
+2014,Birdman,comedy
+2016,Moonlight,drama
+2017,The Shape of Water,fantasy
+2018,Green Book,drama
+2019,Parasite,drama
+2020,Nomadland,drama
+2021,CODA,drama
+2022,Everything Everywhere All at Once,comedy-drama
