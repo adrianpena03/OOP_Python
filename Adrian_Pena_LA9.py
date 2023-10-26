@@ -6,25 +6,8 @@
 # read it and placing it in a nested list format, then prompt for
 # for a category and display all movie titles in that category.
 #
-# Specific instructions:
-#
-# 1.  Read the list of movies given below and write them to
-#     file moviesLab9.txt in CSV format:
-#       [1939, 'Gone with the Wind', 'drama'] ...
-#             is written as "1939,Gone with the Wind,drama"  (w/o quotes)
-#       Don't forget the nl control character to separate the lines. 
-# 2.  Visually inspect the file using a text editor such as Notepad
-#     and add three movies to the end of the file in CSV format:
-#         1976, Rocky, drama
-#         1997, Titanic, historical
-#         2011, The Artist, comedy
-# 3.  Read the updated file, split the lines, remove control characters,
-#     and create a nested list similar to the one given below
-# 4.  Write a while loop to prompt for a category, search the list built 
-#     in #4, and display all movie titles in that category.
-#
-# Gene Shuman     10/21/2023 
-#---------------------------------------------------------------------------
+
+
 
 movies = [[1939, 'Gone With the Wind', 'drama'],
           [1943, 'Casablanca', 'drama'],
