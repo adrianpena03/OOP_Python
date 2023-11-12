@@ -39,3 +39,13 @@ for i in range(5):
 
 # Output: 3 
 
+# ----------------------
+
+sq = [n**2 for n in range (10)]
+print(sq)
+
+# same thing
+
+sq1 = []
+for n in range(10):
+    sq1.append(n**2)
