@@ -1,89 +1,63 @@
-# class FCPDCrime(list):
-#     def __init__(self, name):
-#         super().__init__()
-#         self.name = name
-
-#     def countByCrime(self, select='all'):
-#         # display a list of reported number for each type of crime, one line per crime , sorted by frequency count.
-#         # input parameter select = 'all' or for a specific zip code
-#         # output: one line per unique crime code for the selected area ('all' or 'Zip Code')
-#         # Return: No return value
-
-#     def countByZip(self):
-#         # Displays a report of the number of crimes reported by the zip code in sorted format from highest to lowest
-#         # output: displays one line per county zip code with the count and the % of total crimes
-#         # return: no return value
-
-#     def load(self, file='CrimeReports-0423.csv'):
-#         # open the file in the parameter, read its contents, split each line into a separate data item strings, remove control characters.
-#         # output: no display output is produced
-#         # returns: number of lines read
-
-#     def printCrimes(self, zip='all'):
-#         # Display a formatted report of all lines in the downloaded report or lines for a selected zip code "zip = '22030'.
-#         # Input: 'Zip' parameter - 5 digit zip code in string format or 'all' to print for all county zip codes
-#         # output: crime reports, one line per incident
-#         # returns: nothing is returned
-
-#     def zipCodeList(self, zip='22030'):
-#         # return a list of all incident report lines for a selected fairfax county zipcode.
-#         # input: 5 digit zip code in string format, default is '22030'.
-#         # output: no display output is produced
-
 class FCPDCrime(list):
+    """
+    FCPDCrime: A class for processing Fairfax County Police Department crime reports.
+
+    Author: Adrian Pena
+    """
     def __init__(self, name):
         super().__init__()
         self.name = name
 
-    def countByCrime(self, select='all'):
-        crimes = [line[2] for line in self if select == 'all' or line[7] == select]
-        crime_counts = self._count_items(crimes)
-        sorted_crimes = self._sort_items(crime_counts)
-
-        for crime, count in sorted_crimes:
-            print(f"{crime}: {count}")
-
-    def countByZip(self):
-        zip_counts = self._count_items([line[8] for line in self])
-        total_crimes = len(self)
-
-        sorted_zips = self._sort_items(zip_counts)
-
-        for zip_code, count in sorted_zips:
-            percentage = (count / total_crimes) * 100
-            print(f"{zip_code}: {count} ({percentage:.2f}%)")
-
     def load(self, file='CrimeReports.csv'):
-        with open(file, 'r') as file_handle:
-            for line in file_handle:
-                # Split each line into individual string entries
-                line = line.strip().split(',')
-                # Append the line to the FCPDCrime object
-                self.append(line)
-        
+        # Loads crime data from a CSV file into the FCPDCrime object
+        with open(file, 'r') as f:
+            for line in f:
+                # Splitting each line into individual string entries and removing '\n'
+                data = line.strip().split(',')
+                self.append(data)
         return len(self)
 
     def printCrimes(self, zip='all'):
-        for line in self:
-            if zip == 'all' or line[8] == zip:
-                print(','.join(line))
+        # Prints formatted crime reports for a specified zip code or all zip codes
+        for crime in self.zipCodeList(zip):
+            print(" ".join(crime))
 
     def zipCodeList(self, zip='22030'):
-        return [line for line in self if line[8] == zip]
+        # Returns a list of incident reports for a specified Fairfax County zip code
+        return [line for line in self if line[-1] == zip]
 
-    def _count_items(self, items):
-        counts = {}
-        for item in items:
-            counts[item] = counts.get(item, 0) + 1
-        return counts
+    def countByZip(self):
+        zip_counter = {}
+        total_crimes = len(self)
 
-    def _sort_items(self, counts):
-        return sorted(counts.items(), key=lambda x: x[1], reverse=True)
+        for line in self:
+            zip_counter[line[-1]] = zip_counter.get(line[-1], 0) + 1
+
+        sorted_zips = sorted(zip_counter.items(), reverse=True)
+
+        for zip_code, count in sorted_zips:
+            percentage = (count / total_crimes) * 100
+            print(f"{zip_code:<10}{count:<5}{percentage:.2f}%")
+
+    def countByCrime(self, select='all'):
+        crime_counter = {}
+        total_crimes = len(self)
+
+        for line in self:
+            if select == 'all' or line[-1] == select:
+                crime_counter[line[1]] = crime_counter.get(line[1], 0) + 1
+
+        sorted_crimes = sorted(crime_counter.items(), reverse=True)
+
+        for crime_code, count in sorted_crimes:
+            percentage = (count / total_crimes) * 100
+            crime_description = next((line[2] for line in self if line[1] == crime_code), '')
+            print(f"{crime_code:<12}{count:<5}{percentage:.2f}%{'':>10}{crime_description}")
 
 
 # Example usage:
 FC = FCPDCrime(name='My FCPD Crime Reporting Object')
-FC.load(file='<fully_qualified_file_name>')
+FC.load(file='CrimeReports.csv')
 FC.printCrimes()
 ZL = FC.zipCodeList(zip='22030')
 for c in ZL:

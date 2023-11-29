@@ -6,7 +6,6 @@ from pprint import pprint
 
 
 auth = {
-
         'username': 'x',
         'password': 'x',
         'token': '',
