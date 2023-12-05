@@ -61,7 +61,6 @@ class Employee():
         else:
             return self.__employee_id == e1.__employee_id and self.__name == e1.__name
         
-
 print('\nStart of Lab 3 Employee class test')
 print('\n------------------------------------------------------------------------')
 input('Hit "Enter" to run a regression test of existing features from Lab #2') 

@@ -50,7 +50,6 @@ def writeFile(state_dict):
             state_data = ",".join(state_info)
             output_file.write(state_data + "\n")
             
-
 file_path = "/Users/adrianpena/Desktop/cat.txt"
 state_list = ReadAndFix(file_path)
 display_items(state_list)

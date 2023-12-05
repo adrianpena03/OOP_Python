@@ -242,7 +242,6 @@ class Catalog():
             return True
         else:
             return False
- 
 
     def printCatalog(self): # Ct4. provide code for this method
         """Input: none

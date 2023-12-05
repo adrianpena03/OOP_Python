@@ -50,7 +50,6 @@ class Employee():
 
 
 
-
 print('\nStart of Employee class demo')
 e1 = Employee()._get('E34568', 'David Miller', 1996, 1, 'Accountant', 82000)
 e2 = Employee()._get('E22154', 'Margarete Smith', 1972, 10, 'Vice President', 115000)
