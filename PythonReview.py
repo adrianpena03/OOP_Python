@@ -21,38 +21,37 @@ def StateName(abrev):
         if abrev == s[0]:
             return s[1]
     return "Not Found."
-# print(StateName(abrev))
+print(StateName(abrev))
 
-# for i in range(len(states)):
-#     print(i)
-#     print(states[i])
+for i in range(len(states)):
+    print(i)
+    print(states[i])
 
-# fname = ("/Users/adrianpena/Desktop/Cat.txt", "r")
-# r = open(fname)
-# #do stuff
-# r.close() # have to close to see changes
+fname = ("/Users/adrianpena/Desktop/Cat.txt", "r")
+r = open(fname)
+#do stuff
+r.close() # have to close to see changes
 
 
-# with open("/Users/adrianpena/Desktop/Cat.txt", "a") as f: # fix
-#     f.write("7, Greeetings!")
-#     f.write("8, Welcome!")
-#     for line in f:
-#         f.strip("\n")
-#     print(f.readlines)
+with open("/Users/adrianpena/Desktop/Cat.txt", "a") as f: # fix
+    f.write("7, Greeetings!")
+    f.write("8, Welcome!")
+    for line in f:
+        f.strip("\n")
+    print(f.readlines)
 
-# def validate_phone_number(phone_number):
-#     digits_count = 0
+def validate_phone_number(phone_number):
+    digits_count = 0
 
-#     for char in phone_number:
-#         if char.isdigit():
-#             digits_count += 1
+    for char in phone_number:
+        if char.isdigit():
+            digits_count += 1
 
-#     if digits_count == 10:
-#         return True
-#     else:
-#         return False
+    if digits_count == 10:
+        return True
+    else:
+        return False
     
-# phone_number = "(555) 456 - 798"
+phone_number = "(555) 456 - 798"
 
-# print(validate_phone_number(phone_number))
-
+print(validate_phone_number(phone_number))
